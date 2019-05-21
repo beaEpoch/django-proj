@@ -1,8 +1,15 @@
 from rest_framework import serializers
-from .models import PhoneCaptcha
+from .models import Phone, Captcha
 
-class PhoneCaptchaSerializer(serializers.ModelSerializer):
+class PhoneSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = PhoneCaptcha
-        fields = ('id', 'phone', 'captcha', 'kind', 'created')
+        model = Phone
+        fields = ('id', 'phone', 'kind', 'status', 'created')
+
+
+class CaptchaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Captcha
+        fields = ('id', 'phone', 'captcha', 'created')
