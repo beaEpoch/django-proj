@@ -5,8 +5,16 @@ from .models import Phone, Captcha
 from .serializer import PhoneSerializer, CaptchaSerializer
 
 
-def index15(request):
-    return render(request, '15.html')
+def index(request):
+    act_type = request.GET.get('act_type')
+    if act_type == '1':
+        return render(request, '15.html')
+    elif act_type == '2':
+        return render(request, '30.html')
+    elif act_type == '3':
+        return render(request, '45.html')
+    else:
+        return render(request, '60.html')
 
 
 class PhoneView(generics.ListCreateAPIView):
