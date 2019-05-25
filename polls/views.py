@@ -25,7 +25,7 @@ class CaptchaView(generics.ListCreateAPIView):
     filter_fields = ('phone',)
 
 
-class PhoneDetail(generics.RetrieveUpdateAPIView):
+class PhoneDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Phone.objects.all()
     serializer_class = PhoneSerializer
     # permission_classes = (IsAuthenticated)
