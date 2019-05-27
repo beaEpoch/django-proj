@@ -37,3 +37,9 @@ class PhoneDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Phone.objects.all()
     serializer_class = PhoneSerializer
     # permission_classes = (IsAuthenticated)
+
+
+class CaptchaDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Captcha.objects.all()
+    serializer_class = CaptchaSerializer
+    # permission_classes = (IsAuthenticated)
