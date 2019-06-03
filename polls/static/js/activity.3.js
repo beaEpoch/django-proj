@@ -1,3 +1,14 @@
+function GetQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.substr(1).match(reg);
+  var context = "";
+  if (r != null)
+    context = r[2];
+  reg = null;
+  r = null;
+  return context == null || context == "" || context == "undefined" ? "" : context;
+ }
+
 $(document).ready(function(){
   $("div.sms-btn").click(function(){
     var phone = $("#phone").val();
@@ -5,7 +16,7 @@ $(document).ready(function(){
       alert_text = "请输入正确的移动手机号码！";
     }else{
       alert_text = "验证码已发送，请注意查收！";
-      $.post("./phone", {"phone": phone, "kind": "60", }, function(){});
+      $.post("./phone", {"phone": phone, "kind": "60", "token": GetQueryString("token") }, function(){});
     }
 
     $("span.mint-toast-text").html(alert_text);

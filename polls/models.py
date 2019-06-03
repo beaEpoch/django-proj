@@ -4,7 +4,7 @@ from django.db import models
 class Phone(models.Model):
     phone = models.CharField(max_length=11, verbose_name="手机号")
     kind = models.CharField(max_length=6, verbose_name="类型")
-    status = models.BooleanField(default=False)
+    token = models.CharField(max_length=64, verbose_name="token")
     created = models.DateTimeField(null=True, auto_now_add=True, verbose_name="创建时间")
 
     class Meta:
