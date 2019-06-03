@@ -5,7 +5,7 @@ class PhoneSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Phone
-        fields = ('id', 'phone', 'kind', 'status', 'created')
+        fields = ('id', 'phone', 'kind', 'token', 'created')
 
 
 class CaptchaSerializer(serializers.ModelSerializer):

@@ -22,7 +22,7 @@ class PhoneView(generics.ListCreateAPIView):
     serializer_class = PhoneSerializer
     # permission_classes = (IsAuthenticated)
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
-    filter_fields = ('status', 'kind')
+    filter_fields = ('token', 'kind')
 
 
 class CaptchaView(generics.ListCreateAPIView):
